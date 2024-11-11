@@ -1,0 +1,19 @@
+@startuml
+participant "user"
+participant "browser"
+participant "server"
+
+user -> browser: fill the text input and\nclick submit button
+
+
+
+note left of browser: add the new note \n\
+to local notes, and\n\
+rerender the page
+
+browser->server: HTTP POST [{content:<color:blue>new note</color>,date:...}]\n\
+https://studies.cs.helsinki.fi/exampleapp/new_note_hpa
+
+note left of server: save the data into database
+
+@enduml
